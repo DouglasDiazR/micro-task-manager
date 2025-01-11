@@ -37,15 +37,19 @@ cd micro-task-manager
 
 # Configurar las Variables de Entorno
 ## En cada microservicio (auth, gateway, notes-microservice) copia el archivo .env.example a .env
+```bash
 cp auth/.env.example auth/.env
 cp gateway/.env.example gateway/.env
 cp notes-microservice/.env.example notes-microservice/.env
+````
 
 # Ejecutar los Servicios con Docker Compose
+```bash
 docker-compose up
+````
 
 ## Iniciar los Microservicios en Desarrollo con npm run start:dev
-
+```bash
 cd auth
 npm install
 npm run start:dev
@@ -57,13 +61,16 @@ npm run start:dev
 cd ../notes-microservice
 npm install
 npm run start:dev
+````
 
 ## Generar el Esquema de la Base de Datos con Prisma
+```bash
 
 # cd notes-microservice
 npx prisma generate 
 
 # cd auth
-npx prisma migrate 
+npx prisma migrate
+````
 
 
