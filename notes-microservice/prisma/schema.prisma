@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+enum NoteStatus {
+  pendiente
+  progreso
+  cancelada
+}
+
+model Note {
+  id String @id @default(auto()) @db.ObjectId @map("_id")
+  title String
+  description String
+  authorId String
+  userId String?
+  status NoteStatus @default(pendiente)
+  endDate DateTime?
+  available Boolean @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([available])
+}
+
+
