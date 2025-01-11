@@ -6,11 +6,16 @@ Este proyecto es una aplicación de microservicios que consta de tres microservi
 
 El proyecto tiene la siguiente estructura de carpetas:
 
-micro-task-manager/
-├── auth/ # Microservicio de autenticación
-├── gateway/ # Microservicio de puerta de enlace (API Gateway) 
-├── notes-microservice/ # Microservicio de gestión de notas 
-├── docker-compose.yml # Archivo de configuración de Docker Compose
+micro-task-manager/  
+
+├── auth/ # Microservicio de autenticación  
+
+├── gateway/ # Microservicio de puerta de enlace (API Gateway)  
+
+├── notes-microservice/ # Microservicio de gestión de notas  
+
+├── docker-compose.yml # Archivo de configuración de Docker Compose  
+  
 
 ## Requisitos Previos
 
