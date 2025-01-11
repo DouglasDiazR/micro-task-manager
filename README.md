@@ -48,6 +48,16 @@ cp notes-microservice/.env.example notes-microservice/.env
 docker-compose up
 ````
 
+## Generar el Esquema de la Base de Datos con Prisma
+```bash
+
+# cd notes-microservice
+npx prisma generate 
+
+# cd auth
+npx prisma migrate
+````
+
 ## Iniciar los Microservicios en Desarrollo con npm run start:dev
 ```bash
 cd auth
@@ -63,14 +73,6 @@ npm install
 npm run start:dev
 ````
 
-## Generar el Esquema de la Base de Datos con Prisma
-```bash
 
-# cd notes-microservice
-npx prisma generate 
-
-# cd auth
-npx prisma migrate
-````
 
 
