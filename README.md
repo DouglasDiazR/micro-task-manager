@@ -73,7 +73,7 @@ npm install
 npm run start:dev
 ````
 ## Correr la Api de Swagger en el puerto 
-# http://localhost:300/api
+# http://localhost:3000/api
 
 
 
