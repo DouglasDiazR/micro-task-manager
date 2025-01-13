@@ -5,7 +5,7 @@ Este proyecto es una aplicación de microservicios que consta de tres microservi
 ## Estructura del Proyecto
 
 El proyecto tiene la siguiente estructura de carpetas:
-
+```bash
 micro-task-manager/  
 
 ├── auth/ # Microservicio de autenticación  
@@ -15,7 +15,7 @@ micro-task-manager/
 ├── notes-microservice/ # Microservicio de gestión de notas  
 
 ├── docker-compose.yml # Archivo de configuración de Docker Compose  
-  
+  ````
 
 ## Requisitos Previos
 
@@ -54,26 +54,33 @@ docker-compose up
 # cd notes-microservice
 npx prisma generate 
 
-# cd auth
+# Ejecutar migraciones en auth
+cd ../auth
 npx prisma migrate
 ````
 
 ## Iniciar los Microservicios en Desarrollo con npm run start:dev
 ```bash
+# Iniciar el microservicio de autenticación
 cd auth
 npm install
 npm run start:dev
 
+# Iniciar el API Gateway
 cd ../gateway
 npm install
 npm run start:dev
 
+# Iniciar el microservicio de gestión de notas
 cd ../notes-microservice
 npm install
 npm run start:dev
 ````
-## Correr la Api de Swagger en el puerto 
-# http://localhost:3000/api
-
+## Acceso a la Documentación de la API
+Puedes acceder a la documentación de la API generada con Swagger UI desde tu navegador en la siguiente URL:
+````bash
+Swagger UI: http://localhost:3000/api#/
+````
+Esta documentación permite explorar los endpoints disponibles, los parámetros requeridos y las respuestas esperadas para cada microservicio.
 
 
