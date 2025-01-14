@@ -18,7 +18,9 @@ import { User } from 'src/common/decorators/user.decorator'
 import { User as IUser } from 'src/auth/entities/auth.entity'
 import { catchError } from 'rxjs'
 import { UpdateNoteDto } from './dto/update-note.dto'
+import { ApiOperation, ApiQuery, ApiTags } from '@nestjs/swagger'
 
+@ApiTags('Notes')
 @Controller('notes')
 export class NotesController {
     constructor(@Inject(NATS_SERVICE) private readonly client: ClientProxy) {}
@@ -38,6 +40,15 @@ export class NotesController {
             )
     }
 
+    @ApiOperation({
+        summary: 'Ruta para buscar todas las notas asosiadas al usuario.',
+    })
+    @ApiQuery({
+        name: 'userId',
+        required: false,
+        description: 'Filtrar las notas por el Id del usuario asignado',
+        example: '6ed467df-ef02-4e24-a539-a201cd1f4c7d',
+    })
     @UseGuards(AuthGuard)
     @Get()
     findAll(

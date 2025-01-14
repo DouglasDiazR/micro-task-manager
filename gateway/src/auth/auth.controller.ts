@@ -16,12 +16,7 @@ import { catchError } from 'rxjs'
 import { User } from '../common/decorators/user.decorator'
 import { Token } from '../common/decorators/token.decorator'
 import { User as IUser } from './entities/auth.entity'
-import {
-    ApiExcludeEndpoint,
-    ApiOperation,
-    ApiResponse,
-    ApiTags,
-} from '@nestjs/swagger'
+import { ApiExcludeEndpoint, ApiOperation, ApiTags } from '@nestjs/swagger'
 
 @ApiTags('Auth')
 @Controller('auth')
